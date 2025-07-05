@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>expl</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-800 border-b border-gray-700 p-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <h1 class="text-xl font-bold text-blue-400">
+                    <i class="fas fa-folder-open mr-2"></i>
+                    expl
+                </h1>
+                <div class="flex items-center space-x-2">
+                    <button id="backBtn" class="p-2 rounded-lg bg-gray-700 hover:bg-gray-600 disabled:opacity-50">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <button id="forwardBtn" class="p-2 rounded-lg bg-gray-700 hover:bg-gray-600 disabled:opacity-50">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button id="refreshBtn" class="p-2 rounded-lg bg-gray-700 hover:bg-gray-600">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <input type="text" id="searchInput" placeholder="Rechercher..." 
+                           class="bg-gray-700 border border-gray-600 rounded-lg px-3 py-1.5 pl-9 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                </div>
+                <a href="terminal.html" class="p-1.5 rounded-lg bg-green-600 hover:bg-green-700 inline-flex items-center">
+                    <i class="fas fa-terminal"></i>
+                    <span class="ml-2 hidden sm:inline"></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-800 border-b border-gray-700 p-3">
+        <div id="breadcrumb" class="flex items-center space-x-2 text-sm">
+            <i class="fas fa-home text-blue-400"></i>
+            <span class="text-gray-300">/</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <div id="sidebar" class="fixed md:relative w-64 bg-gray-800 border-r border-gray-700 p-4 h-full z-20 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out">
+            <div class="space-y-2">
+                <div class="mb-4">
+                    <h3 class="text-sm font-semibold text-gray-400 mb-2">RACCOURCIS</h3>
+                    <div id="shortcuts" class="space-y-1">
+                        <a href="#" data-shortcut="/" class="block p-2 rounded-lg hover:bg-gray-700 text-sm">
+                            <i class="fas fa-home mr-2"></i>Accueil
+                        </a>
+                        <a href="#" data-shortcut="Téléchargements" class="block p-2 rounded-lg hover:bg-gray-700 text-sm">
+                            <i class="fas fa-download mr-2"></i>Téléchargements
+                        </a>
+                        <a href="#" data-shortcut="Images" class="block p-2 rounded-lg hover:bg-gray-700 text-sm">
+                            <i class="fas fa-images mr-2"></i>Images
+                        </a>
+                        <a href="#" data-shortcut="Vidéos" class="block p-2 rounded-lg hover:bg-gray-700 text-sm">
+                            <i class="fas fa-file-video mr-2"></i>Vidéos
+                        </a>
+                        <a href="#" data-shortcut="Audio" class="block p-2 rounded-lg hover:bg-gray-700 text-sm">
+                            <i class="fas fa-file-audio mr-2"></i>Audio
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 mb-2">STOCKAGE</h3>
+                    <div class="space-y-2">
+                        <div class="text-sm">
+                            <div class="flex justify-between items-center mb-1">
+                                <span>Disque local</span>
+                                <span class="text-gray-400">75%</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="flex-1 flex">
+            <!-- File List -->
+            <div class="flex-1 p-4">
+                <div id="fileListContainer" class="bg-gray-800 rounded-lg p-4 h-full overflow-auto">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center space-x-4">
+                            <button id="sidebarToggleBtn" class="p-2 rounded-lg text-white hover:bg-gray-700 md:hidden" title="Menu">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                            <button id="viewGrid" class="p-2 rounded-lg bg-blue-600 hover:bg-blue-700">
+                                <i class="fas fa-th"></i>
+                            </button>
+                            <button id="viewList" class="p-2 rounded-lg bg-gray-700 hover:bg-gray-600">
+                                <i class="fas fa-list"></i>
+                            </button>
+                            <select id="sortBy" class="bg-gray-700 border border-gray-600 rounded-lg px-3 py-1 text-sm">
+                                <option value="name">Nom</option>
+                                <option value="size">Taille</option>
+                                <option value="modified">Modifié</option>
+                                <option value="type">Type</option>
+                            </select>
+                            <button id="rootContextMenuBtn" class="group relative bg-gray-500 hover:bg-gray-600 text-white font-bold p-2 rounded-lg items-center justify-center transition-colors duration-200 flex" title="Menu">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <button id="uploadBtn" class="group relative bg-purple-600 hover:bg-purple-700 text-white font-bold p-2 rounded-lg flex items-center transition-colors duration-200" title="Téléverser des fichiers">
+                                <i class="fas fa-upload"></i>
+                            </button>
+                            <input type="file" id="fileInput" multiple class="hidden">
+                        </div>
+                    </div>
+                    
+                    <div id="fileList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                        <!-- Files will be loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preview Panel -->
+            <div id="previewPanel" class="w-80 bg-gray-800 border-l border-gray-700 p-4 hidden">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-semibold">Aperçu</h3>
+                    <button id="closePreview" class="text-gray-400 hover:text-white">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div id="previewContent" class="space-y-4">
+                    <!-- Preview content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Le terminal est maintenant sur une page séparée -->
+
+    <!-- Menu contextuel (caché par défaut) -->
+    <div id="notificationContainer" class="fixed top-5 right-5 z-50"></div>
+    <div id="contextMenu" class="hidden absolute z-50 bg-gray-800 border border-gray-600 rounded-md shadow-lg w-48 text-sm"></div>
+
+    <!-- Modale pour l'éditeur léger -->
+    <div id="lightEditorModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+        <div class="bg-gray-800 rounded-lg shadow-xl w-3/4 h-3/4 flex flex-col">
+            <div class="p-4 border-b border-gray-700 flex justify-between items-center">
+                <h3 id="lightEditorTitle" class="text-lg font-semibold text-white">Éditer le fichier</h3>
+                <button id="closeLightEditor" class="text-gray-400 hover:text-white">&times;</button>
+            </div>
+            <div class="p-4 flex-grow">
+                <textarea id="lightEditorTextarea" class="w-full h-full bg-gray-900 text-white border border-gray-700 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            </div>
+            <div class="p-4 border-t border-gray-700 text-right">
+                <button id="saveLightEditor" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Sauvegarder</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="file_explorer_transfer.js" defer></script>
+    <script src="file_explorer_terminal.js?v=1.0.7" defer></script>
+    <script src="file_explorer_js.js?v=1.0.7" defer></script>
+
+    <!-- Barre de progression pour le téléversement -->
+    <div id="uploadProgressContainer" class="fixed bottom-0 left-0 right-0 p-4 bg-gray-900 bg-opacity-90 z-50 hidden">
+        <div class="max-w-2xl mx-auto">
+            <div class="flex justify-between items-center mb-1">
+                <p class="text-white text-sm font-medium">Téléversement en cours...</p>
+                <p id="uploadProgressText" class="text-white text-sm font-medium">0%</p>
+            </div>
+            <div class="w-full bg-gray-600 rounded-full h-2.5">
+                <div id="uploadProgressBar" class="bg-blue-500 h-2.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

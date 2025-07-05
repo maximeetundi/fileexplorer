@@ -1,0 +1,125 @@
+[05-Jul-2025 11:36:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mb_convert_encoding() in C:\Users\z\Pictures\CU\file_explorer_server.php:658
+Stack trace:
+#0 C:\Users\z\Pictures\CU\file_explorer_server.php(765): FileExplorer->executeCommand('dir', '/')
+#1 {main}
+  thrown in C:\Users\z\Pictures\CU\file_explorer_server.php on line 658
+[05-Jul-2025 11:37:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function mb_convert_encoding() in C:\Users\z\Pictures\CU\file_explorer_server.php:658
+Stack trace:
+#0 C:\Users\z\Pictures\CU\file_explorer_server.php(765): FileExplorer->executeCommand('dir', '/')
+#1 {main}
+  thrown in C:\Users\z\Pictures\CU\file_explorer_server.php on line 658
+[05-Jul-2025 15:02:06 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 33
+[05-Jul-2025 15:02:06 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 34
+[05-Jul-2025 15:02:06 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 35
+[05-Jul-2025 15:02:06 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 36
+[05-Jul-2025 15:02:17 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 33
+[05-Jul-2025 15:02:17 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 34
+[05-Jul-2025 15:02:17 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 35
+[05-Jul-2025 15:02:17 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 36
+[05-Jul-2025 15:07:44 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 35
+[05-Jul-2025 15:07:44 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 36
+[05-Jul-2025 15:07:44 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 37
+[05-Jul-2025 15:07:44 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 38
+[05-Jul-2025 15:31:52 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 33
+[05-Jul-2025 15:31:52 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 34
+[05-Jul-2025 15:31:52 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 35
+[05-Jul-2025 15:31:52 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 36
+[05-Jul-2025 15:31:53 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 33
+[05-Jul-2025 15:31:53 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 34
+[05-Jul-2025 15:31:53 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 35
+[05-Jul-2025 15:31:53 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 36
+[05-Jul-2025 15:35:42 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 33
+[05-Jul-2025 15:35:42 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 34
+[05-Jul-2025 15:35:42 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 35
+[05-Jul-2025 15:35:42 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 36
+[05-Jul-2025 15:35:42 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 33
+[05-Jul-2025 15:35:42 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 34
+[05-Jul-2025 15:35:42 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 35
+[05-Jul-2025 15:35:42 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 36
+[05-Jul-2025 15:37:25 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 33
+[05-Jul-2025 15:37:25 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 34
+[05-Jul-2025 15:37:25 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 35
+[05-Jul-2025 15:37:25 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 36
+[05-Jul-2025 15:37:25 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 33
+[05-Jul-2025 15:37:25 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 34
+[05-Jul-2025 15:37:25 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 35
+[05-Jul-2025 15:37:25 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 36
+[05-Jul-2025 15:39:42 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 37
+[05-Jul-2025 15:39:42 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 38
+[05-Jul-2025 15:39:42 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 39
+[05-Jul-2025 15:39:42 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 40
+[05-Jul-2025 15:39:42 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 37
+[05-Jul-2025 15:39:42 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 38
+[05-Jul-2025 15:39:42 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 39
+[05-Jul-2025 15:39:42 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 40
+[05-Jul-2025 16:50:47 UTC] PHP Warning:  require_once(file_explorer_logger.php): Failed to open stream: No such file or directory in C:\Users\z\Pictures\CU\file_explorer_server.php on line 23
+[05-Jul-2025 16:50:47 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'file_explorer_logger.php' (include_path='.;C:\php\pear') in C:\Users\z\Pictures\CU\file_explorer_server.php:23
+Stack trace:
+#0 {main}
+  thrown in C:\Users\z\Pictures\CU\file_explorer_server.php on line 23
+[05-Jul-2025 16:50:47 UTC] PHP Warning:  require_once(file_explorer_logger.php): Failed to open stream: No such file or directory in C:\Users\z\Pictures\CU\file_explorer_server.php on line 23
+[05-Jul-2025 16:50:47 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'file_explorer_logger.php' (include_path='.;C:\php\pear') in C:\Users\z\Pictures\CU\file_explorer_server.php:23
+Stack trace:
+#0 {main}
+  thrown in C:\Users\z\Pictures\CU\file_explorer_server.php on line 23
+[05-Jul-2025 16:50:48 UTC] PHP Warning:  require_once(file_explorer_logger.php): Failed to open stream: No such file or directory in C:\Users\z\Pictures\CU\file_explorer_server.php on line 23
+[05-Jul-2025 16:50:48 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'file_explorer_logger.php' (include_path='.;C:\php\pear') in C:\Users\z\Pictures\CU\file_explorer_server.php:23
+Stack trace:
+#0 {main}
+  thrown in C:\Users\z\Pictures\CU\file_explorer_server.php on line 23
+[05-Jul-2025 16:50:48 UTC] PHP Warning:  require_once(file_explorer_logger.php): Failed to open stream: No such file or directory in C:\Users\z\Pictures\CU\file_explorer_server.php on line 23
+[05-Jul-2025 16:50:48 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'file_explorer_logger.php' (include_path='.;C:\php\pear') in C:\Users\z\Pictures\CU\file_explorer_server.php:23
+Stack trace:
+#0 {main}
+  thrown in C:\Users\z\Pictures\CU\file_explorer_server.php on line 23
+[05-Jul-2025 18:06:16 UTC] PHP Warning:  Undefined array key "command" in C:\Users\z\Pictures\CU\file_explorer_server.php on line 980
+[05-Jul-2025 18:11:58 UTC] PHP Warning:  Undefined array key "command" in C:\Users\z\Pictures\CU\file_explorer_server.php on line 980
+[05-Jul-2025 18:15:44 UTC] PHP Warning:  Undefined array key "command" in C:\Users\z\Pictures\CU\file_explorer_server.php on line 980
+[05-Jul-2025 18:20:42 UTC] Commande reçue: ls dans le répertoire: /
+[05-Jul-2025 18:21:03 UTC] Commande reçue: dir dans le répertoire: /
+[05-Jul-2025 18:22:00 UTC] Commande reçue: ls dans le répertoire: /Audio
+[05-Jul-2025 18:30:09 UTC] Commande reçue: ls dans le répertoire: /
+[05-Jul-2025 18:30:11 UTC] Commande reçue: dir dans le répertoire: /
+[05-Jul-2025 18:30:17 UTC] Commande reçue: ls dans le répertoire: /a
+[05-Jul-2025 18:34:32 UTC] Commande reçue: dir dans le répertoire: /
+[05-Jul-2025 18:34:37 UTC] Commande reçue: clear dans le répertoire: /
+[05-Jul-2025 18:34:40 UTC] Commande reçue: cls dans le répertoire: /
+[05-Jul-2025 18:34:48 UTC] Commande reçue: clear dans le répertoire: /
+[05-Jul-2025 18:34:49 UTC] Commande reçue: ls dans le répertoire: /
+[05-Jul-2025 18:35:19 UTC] Commande reçue: dir dans le répertoire: /
+[05-Jul-2025 18:36:54 UTC] Commande reçue: ls dans le répertoire: /Audio
+[05-Jul-2025 18:36:57 UTC] Commande reçue: dir dans le répertoire: /Audio
+[05-Jul-2025 18:37:44 UTC] Commande reçue: ls dans le répertoire: /Audio
+[05-Jul-2025 18:37:47 UTC] Commande reçue: dir dans le répertoire: /Audio
+[05-Jul-2025 18:45:02 UTC] Commande reçue: ls dans le répertoire: /Audio
+[05-Jul-2025 18:45:27 UTC] Commande reçue: ls dans le répertoire: /
+[05-Jul-2025 18:48:08 UTC] Commande reçue: ls dans le répertoire: /Audio
+[05-Jul-2025 18:48:12 UTC] Commande reçue: dir dans le répertoire: /Audio
+[05-Jul-2025 18:54:36 UTC] Commande reçue: clea dans le répertoire: /
+[05-Jul-2025 18:57:00 UTC] Commande reçue: dir dans le répertoire: /
+[05-Jul-2025 18:57:08 UTC] Commande reçue: dir dans le répertoire: /
+[05-Jul-2025 18:57:24 UTC] Commande reçue: dir dans le répertoire: /
+[05-Jul-2025 18:57:57 UTC] Commande reçue: dir dans le répertoire: /
+[05-Jul-2025 19:00:16 UTC] Commande reçue: dir dans le répertoire: /Intel
+[05-Jul-2025 19:07:41 UTC] Commande reçue: dir dans le répertoire: /
+[05-Jul-2025 19:07:45 UTC] Commande reçue: dir dans le répertoire: /
+[05-Jul-2025 19:10:57 UTC] Commande reçue: cdw dans le répertoire: /users
+[05-Jul-2025 19:15:05 UTC] Commande reçue: clea dans le répertoire: /
+[05-Jul-2025 19:26:05 UTC] Commande reçue: cat swapfile.sys dans le répertoire: /
+[05-Jul-2025 19:45:15 UTC] Commande reçue: ./bitcoin_puzzle_solverV2.exe dans le répertoire: /Users/z/Pictures/bitcoin_puzzle_solver
+[05-Jul-2025 19:45:27 UTC] Commande reçue: bitcoin_puzzle_solverV2.exe dans le répertoire: /Users/z/Pictures/bitcoin_puzzle_solver
+[05-Jul-2025 20:01:07 UTC] PHP Parse error:  syntax error, unexpected variable "$isWindows", expecting "function" in C:\Users\z\Pictures\CU\file_explorer_terminal.php on line 404
+[05-Jul-2025 20:01:12 UTC] PHP Parse error:  syntax error, unexpected variable "$isWindows", expecting "function" in C:\Users\z\Pictures\CU\file_explorer_terminal.php on line 404
+[05-Jul-2025 20:01:28 UTC] PHP Parse error:  syntax error, unexpected variable "$isWindows", expecting "function" in C:\Users\z\Pictures\CU\file_explorer_terminal.php on line 404
+[05-Jul-2025 20:04:46 UTC] PHP Parse error:  syntax error, unexpected variable "$isWindows", expecting "function" in C:\Users\z\Pictures\CU\file_explorer_terminal.php on line 404
+[05-Jul-2025 20:07:25 UTC] PHP Parse error:  Unclosed '{' on line 3 in C:\Users\z\Pictures\CU\file_explorer_terminal.php on line 463
+[05-Jul-2025 20:08:40 UTC] PHP Parse error:  Unclosed '{' on line 3 in C:\Users\z\Pictures\CU\file_explorer_terminal.php on line 460
+[05-Jul-2025 20:10:57 UTC] PHP Parse error:  Unclosed '{' on line 3 in C:\Users\z\Pictures\CU\file_explorer_terminal.php on line 456
+[05-Jul-2025 20:12:46 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 40
+[05-Jul-2025 20:12:46 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 41
+[05-Jul-2025 20:12:46 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 42
+[05-Jul-2025 20:12:46 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 43
+[05-Jul-2025 20:12:46 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 40
+[05-Jul-2025 20:12:46 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 41
+[05-Jul-2025 20:12:46 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 42
+[05-Jul-2025 20:12:46 UTC] PHP Warning:  Cannot modify header information - headers already sent in C:\Users\z\Pictures\CU\file_explorer_server.php on line 43

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Éditeur de Code</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Assurer que l'éditeur remplit l'espace */
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Empêcher le défilement de la page principale */
+        }
+        #editor-container {
+            width: 100%;
+            height: calc(100vh - 4rem); /* Hauteur de la vue moins la barre de navigation */
+        }
+    </style>
+</head>
+<body class="bg-gray-800 text-white h-full flex flex-col">
+
+    <!-- Barre de navigation de l'éditeur -->
+    <nav class="bg-gray-900 p-2 flex justify-between items-center shadow-lg z-10">
+        <div>
+            <span class="text-lg font-semibold">Éditeur</span>
+            <span id="filePath" class="text-sm text-gray-400 ml-4"></span>
+        </div>
+        <div>
+            <button id="saveBtn" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg flex items-center space-x-2 transition-colors duration-200">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path></svg>
+                <span>Enregistrer (Ctrl+S)</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Conteneur pour Monaco Editor -->
+    <div id="editor-container"></div>
+
+    <!-- Loader pour Monaco Editor -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.34.0/min/vs/loader.min.js"></script>
+    <!-- Script de l'éditeur -->
+    <script src="editor.js"></script>
+</body>
+</html>

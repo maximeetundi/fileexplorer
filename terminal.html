@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal - Explorateur de Fichiers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #1a202c;
+            color: #e2e8f0;
+            font-family: 'Consolas', 'Courier New', monospace;
+            overflow: hidden;
+        }
+        #terminalContainer {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            padding: 0;
+            margin: 0;
+        }
+        #terminalHeader {
+            background-color: #2d3748;
+            padding: 0.5rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #4a5568;
+        }
+        #terminalTitle {
+            color: #e2e8f0;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        #terminalContent {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0.5rem 1rem;
+            background-color: #1a202c;
+            color: #e2e8f0;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        #commandLine {
+            display: flex;
+            padding: 0.5rem 1rem;
+            background-color: #2d3748;
+            border-top: 1px solid #4a5568;
+            align-items: center;
+        }
+        #prompt {
+            white-space: nowrap;
+            margin-right: 0.5rem;
+        }
+        #terminalInput {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 14px;
+            outline: none;
+            padding: 0;
+        }
+        .command {
+            margin-bottom: 0.5rem;
+        }
+        .command-prompt {
+            color: #48bb78; /* Vert pour l'utilisateur */
+        }
+        .command-path {
+            color: #63b3ed; /* Bleu pour le chemin */
+        }
+        .output {
+            margin-bottom: 1rem;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        .error {
+            color: #f56565; /* Rouge pour les erreurs */
+        }
+        .directory {
+            color: #63b3ed; /* Bleu pour les dossiers */
+        }
+        .file {
+            color: #e2e8f0; /* Blanc pour les fichiers */
+        }
+    </style>
+</head>
+<body>
+    <div id="terminalContainer">
+        <div id="terminalHeader">
+            <a href="file_explorer.html" class="text-blue-400 hover:text-blue-300 flex items-center">
+                <i class="fas fa-arrow-left mr-2"></i>
+                <span>Retour à l'explorateur</span>
+            </a>
+            <h1 class="text-xl font-mono text-green-400">
+                <i class="fas fa-terminal mr-2"></i>Terminal
+            </h1>
+        </div>
+        <div id="terminalContent">
+            <div class="output">Bienvenue dans le terminal de l'explorateur de fichiers</div>
+            <div class="output">Tapez 'help' pour voir les commandes disponibles</div>
+        </div>
+    
+    <!-- Ligne de commande fixe en bas -->
+    <div id="commandLine">
+        <div id="prompt">
+            <span class="command-prompt">user@terminal</span>
+            <span>:</span>
+            <span id="current-path" class="command-path">/</span>
+            <span>$</span>
+        </div>
+        <input type="text" id="terminalInput" autocomplete="off" spellcheck="false" autofocus>
+    </div>
+    </div>
+
+    <script src="file_explorer_terminal.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Créer un objet fileExplorer avec les méthodes nécessaires
+        const fileExplorer = {
+            // Utiliser le dossier du script comme répertoire racine
+            currentPath: window.location.pathname.split('/').slice(0, -1).join('/') || '/',
+            basePath: window.location.pathname.split('/').slice(0, -1).join('/') || '/',
+            
+            navigateToPath: (path) => {
+                console.log('Navigation vers:', path);
+                // S'assurer que le chemin est sous le dossier racine
+                const fullPath = path.startsWith('/') ? path : 
+                    (fileExplorer.currentPath.endsWith('/') ? 
+                     fileExplorer.currentPath + path : 
+                     fileExplorer.currentPath + '/' + path);
+                
+                // Vérifier que le chemin est sous le dossier racine
+                if (fullPath.startsWith(fileExplorer.basePath) || fullPath === '/') {
+                    fileExplorer.currentPath = fullPath;
+                    window.terminal.updatePrompt();
+                } else {
+                    console.warn('Accès non autorisé en dehors du dossier racine');
+                }
+            },
+            escapeHtml: (text) => {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            },
+            showError: (message) => {
+                console.error('Erreur:', message);
+                const output = document.getElementById('terminalContent');
+                if (output) {
+                    const errorDiv = document.createElement('div');
+                    errorDiv.className = 'error';
+                    errorDiv.textContent = message;
+                    output.appendChild(errorDiv);
+                    output.scrollTop = output.scrollHeight;
+                }
+            },
+            fetchAPI: async (action, params = {}) => {
+                try {
+                    const response = await fetch('file_explorer_server.php', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ action, ...params })
+                    });
+                    return await response.json();
+                } catch (error) {
+                    console.error('Erreur API:', error);
+                    return { 
+                        success: false, 
+                        message: 'Erreur de connexion au serveur: ' + error.message 
+                    };
+                }
+            }
+        };
+
+        // Initialiser le terminal
+        window.terminal = new TerminalManager(fileExplorer);
+        
+        // Mettre le focus sur le champ de saisie
+        const input = document.getElementById('terminalInput');
+        if (input) {
+            input.focus();
+            
+            // Gestion du focus si on clique ailleurs
+            document.addEventListener('click', (e) => {
+                if (e.target !== input) {
+                    input.focus();
+                }
+            });
+        }
+    });
+    </script>
+</body>
+</html>
